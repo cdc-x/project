@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入框提示信息</title>
+</head>
+<body>
+    <input type="text" value="请输入昵称" id="d1">
+
+    <script>
+        // 用户点进输入框时，提示信息消失；离开输入框时，提示信息显示
+        let inpEle = document.getElementById("d1");
+        inpEle.onfocus = function () {
+            inpEle.value = ""
+        };
+        inpEle.onblur = function () {
+            inpEle.value = "请输入昵称"
+        }
+    </script>
+</body>
+</html>

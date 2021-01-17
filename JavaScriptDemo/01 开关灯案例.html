@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开关灯</title>
+    <style>
+        .c1 {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .bg_green {
+            background-color: green;
+        }
+
+        .bg_red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="d1" class="c1 bg_green bg_red"></div>
+<button id="b1">点我</button>
+
+<script>
+    let buttonEle = document.getElementById("b1");
+    buttonEle.onclick = function () {
+        let divEle = document.getElementById("d1");
+        divEle.classList.toggle("bg_red")
+    }
+</script>
+</body>
+</html>

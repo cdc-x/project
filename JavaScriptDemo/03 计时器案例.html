@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="text" id="d1">
+    <button id="start">开始</button>
+    <button id="end">结束</button>
+
+    <script>
+        // 版本1：在输入框中实时显示当前时间
+        // let inpEle = document.getElementById("d1");
+        // function showTime() {
+        //     let currentTime = new Date();
+        //     inpEle.value = currentTime.toLocaleString()
+        // }
+        // setInterval(showTime, 1000)
+
+        // 版本2：点击开始按钮，动态展示；点击停止按钮，时间静止
+        let inpEle = document.getElementById("d1");
+        let startButton = document.getElementById("start");
+        let endButton = document.getElementById("end");
+        let t = null;  // 定义一个全局变量用于接收定时器
+
+        function showTime() {
+            let currentTime = new Date();
+            inpEle.value = currentTime.toLocaleString()
+        }
+
+        startButton.onclick = function () {
+            if (t===null){
+                t = setInterval(showTime, 1000)
+            }
+        };
+
+        endButton.onclick = function () {
+            clearInterval(t);
+            t = null
+        }
+
+    </script>
+</body>
+</html>

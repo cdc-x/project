@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select name="" id="d1"></select>
+    <select name="" id="d2"></select>
+
+    <script>
+        let proEle = document.getElementById("d1");
+        let cityEle = document.getElementById("d2");
+
+        data = {
+            "河北省": ["廊坊", "邯郸"],
+            "北京": ["朝阳区", "海淀区"],
+            "山东": ["威海市", "烟台市"]
+        };
+
+        // for 循环选取省
+        for (let key in data) {
+            // 将省信息做成一个个 option 标签并添加到第一个 select 中
+            // 1.创建 option 标签
+            let opEle = document.createElement("option");
+            // 2.设置文本
+            opEle.innerText = key;
+            // 3.设置value
+            opEle.value = key;  // <option value="key">key</option>
+            // 4.将创建好的 option 标签添加到第一个 select 中
+            proEle.appendChild(opEle)
+        }
+
+        proEle.onchange = function () {
+            // 获取用户先择的省
+            let currentPro = proEle.value;
+            // 获取省对应的城市信息
+            let cityList = data[currentPro];
+            // 先清空第二个select，防止上次数据污染
+            cityEle.innerHTML = "";
+            // for 循环取市
+            for (let i = 0; i < cityList.length; i++) {
+                // 将市信息做成一个个 option 标签并添加到第二个 select 中
+                // 1.创建 option 标签
+                let opEle = document.createElement("option");
+                // 2.设置文本
+                opEle.innerText = cityList[i];
+                // 3.设置value
+                opEle.value = cityList[i];  // <option value="key">key</option>
+                // 4.将创建好的 option 标签添加到第二个 select 中
+                cityEle.appendChild(opEle)
+            }
+        }
+    </script>
+</body>
+</html>
