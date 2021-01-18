@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style>
+        #girlFriend {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/img_01.png" alt="" id="girlFriend">
+    <br>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+
+    <script>
+        let girFriend = document.getElementById("girlFriend");
+        let prevButton = document.getElementById("prev");
+        let nextButton = document.getElementById("next");
+        let minIndex = 1, maxIndex = 4, currentIndex = 1;
+
+        prevButton.onclick = function () {
+            if (currentIndex === minIndex) {
+                currentIndex = maxIndex
+            } else {
+                currentIndex--
+            }
+
+            girFriend.src = `image/img_0${currentIndex}.png`
+        };
+
+        nextButton.onclick = function () {
+            if (currentIndex === maxIndex) {
+                currentIndex = minIndex
+            } else {
+                currentIndex++
+            }
+
+            girFriend.src = `image/img_0${currentIndex}.png`
+        };
+
+
+    </script>
+</body>
+</html>

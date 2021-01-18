@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝相册效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            width: 50px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        #new {
+            width: 400px;
+            height: 400px;
+            margin-left: 20px;
+        }
+
+        .active {
+            border: 2px red solid;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="image/img_01.png" alt="" id="new">
+    <br>
+    <ul>
+        <li class="active">
+            <a href="">
+                <img src="image/img_01.png" alt="" width="46px" class="smallImage">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="image/img_02.png" alt="" width="46px" class="smallImage">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="image/img_03.png" alt="" width="46px" class="smallImage">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="image/img_04.png" alt="" width="46px" class="smallImage">
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        let bigImg = document.getElementById("new");
+        let smallImages = document.getElementsByClassName("smallImage");
+
+        // 给每个img标签添加事件
+        for (let i = 0; i < smallImages.length; i++) {
+            smallImages[i].onmouseover = function () {
+                // 先清除所有li标签的active类
+                for (let j = 0; j < smallImages.length; j++) {
+                    smallImages[j].parentElement.parentElement.classList.remove("active")
+                }
+
+                // 修改大图
+                let imgSrc = this.getAttribute("src");
+                bigImg.setAttribute("src", imgSrc);
+
+                // 给鼠标悬浮的img标签的父标签li添加active类
+                this.parentElement.parentElement.classList.add("active");
+            }
+        }
+
+    </script>
+</body>
+</html>

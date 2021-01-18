@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关闭小广告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #qe_code {
+            height: 160px;
+            width: 180px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #qe_code #code{
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            right: 0;
+        }
+
+        #qe_code #close{
+            height: 18px;
+            width: 18px;
+            position: absolute;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+            color: #666;
+            text-align: center;
+            line-height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="qe_code">
+        <img src="image/phone_taobao.png" alt="" id="code">
+        <span id="close">X</span>
+    </div>
+
+    <script>
+        let divEle = document.getElementById("qe_code");
+        let closeEle = document.getElementById("close");
+
+        closeEle.onclick = function () {
+            divEle.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>

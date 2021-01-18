@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏图片</title>
+    <style>
+        #new {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="b1">隐藏</button>
+    <br>
+    <img src="image/img_04.png" alt="" id="new">
+
+    <script>
+        let imgEle = document.getElementById("new");
+        let btnEle = document.getElementById("b1");
+
+        btnEle.onclick = function () {
+            if(btnEle.innerText === "隐藏"){
+                imgEle.style.display = "none";
+                btnEle.innerText = "显示";
+            }else {
+                imgEle.style.display = "block";
+                btnEle.innerText = "隐藏";
+            }
+        }
+
+    </script>
+</body>
+</html>
