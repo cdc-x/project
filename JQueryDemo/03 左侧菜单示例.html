@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左侧菜单示例</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+
+    <style>
+        .left {
+            position: fixed;
+            float: left;
+            height: 100%;
+            width: 20%;
+            background-color: darkgrey;
+        }
+
+        .title {
+            font-size: 24px;
+            color: white;
+            text-align: center;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <div class="menu">
+        <div class="title">菜单一
+            <div class="items">111</div>
+            <div class="items">222</div>
+            <div class="items">333</div>
+        </div>
+        <div class="title">菜单二
+            <div class="items">111</div>
+            <div class="items">222</div>
+            <div class="items">333</div>
+        </div>
+        <div class="title">菜单三
+            <div class="items">111</div>
+            <div class="items">222</div>
+            <div class="items">333</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // $(".title").click(function () {
+        // 1. 先将所有的items都隐藏
+        $(".items").addClass("hide");
+        // 2.将当前点击的title内部的item去除隐藏
+        $(this).children().removeClass("hide");
+    })
+
+    // 可以使用链式操作
+    // $(".title").click(function () {
+    //     $(this).children().removeClass("hide").parent().siblings().children().addClass("hide")
+    // })
+</script>
+</body>
+</html>

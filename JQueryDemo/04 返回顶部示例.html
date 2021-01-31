@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回顶部示例</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+    <style>
+        #d1 {
+            height: 50px;
+            width: 100px;
+            background-color: orange;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 800px;width: 100%;background-color:darkseagreen;"></div>
+<div style="height: 800px;width: 100%;background-color:papayawhip;"></div>
+<div style="height: 800px;width: 100%;background-color:darkgray;"></div>
+<button id="d1" class="hide">返回顶部</button>
+
+<script>
+    // 屏幕滚动事件
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 100) {
+            $("#d1").removeClass("hide")
+        } else {
+            $("#d1").addClass("hide")
+        }
+    });
+
+    // 点击返回顶部
+    $("#d1").click(function () {
+        $(window).scrollTop(0)
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时获取input中的内容</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+
+</head>
+<body>
+<input type="text" id="d1">
+
+<script>
+    // input事件 可以实时获取用户在input框中输入的内容
+    $("#d1").on("input", function () {
+        console.log(this.value)
+    })
+</script>
+</body>
+</html>

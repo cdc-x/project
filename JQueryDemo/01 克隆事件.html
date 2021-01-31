@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>克隆示例</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+    <style>
+        #d1 {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="d1">点我复制</button>
+
+    <script>
+        $("#d1").on("click", function () {
+            // console.log(this);  // this 指代的是当前操作的DOM标签对象
+
+            // 只有点第一个才会克隆，点其他的没有效果
+            // 因为clone 默认情况下只克隆 html 和 css，不克隆事件
+            // $(this).clone().insertAfter("#d1")
+
+            // 括号内加参数 true 即可克隆事件
+            $(this).clone(true).insertAfter("#d1")
+        })
+    </script>
+</body>
+</html>

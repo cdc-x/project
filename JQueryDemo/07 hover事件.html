@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover事件</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+</head>
+<body>
+<p>hehehehe</p>
+
+<script>
+    // hover事件实际上是 鼠标悬浮 + 鼠标离开 两个事件
+    // $("p").hover(function () {
+    //     alert("123");  // alert操作会被执行两次
+    // })
+
+    // 可以在事件中定义两个函数分别执行悬浮和离开的操作
+    $("p").hover(
+        function () {
+            alert("我来了");  // 鼠标悬浮时触发
+        },
+        function () {
+            alert("我走了");  // 鼠标离开时触发
+        }
+    )
+</script>
+</body>
+</html>

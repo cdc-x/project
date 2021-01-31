@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校验用户名密码</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+
+</head>
+<body>
+<p>
+    username：<input type="text" id="username">
+    <span style="color: red"></span>
+</p>
+
+<p>
+    username：<input type="text" id="password">
+    <span style="color: red"></span>
+</p>
+<button id="d1">提交</button>
+
+<script>
+    let usernameEle = $("#username");
+    let passwordEle = $("#password");
+    $("#d1").click(function () {
+        let userName = usernameEle.val();
+        let passWord = passwordEle.val();
+
+        if (!userName) {
+            usernameEle.next().text("用户名不能为空")
+        }
+
+        if (!passWord) {
+            passwordEle.next().text("密码不能为空")
+        }
+    });
+
+    // 用户点击输入框就将后面的提示信息去掉
+    $("input").focus(function () {
+        $(this).next().text("")
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测键盘按下</title>
+    <script src="jquery/JQuery-3.5.1.js"></script>
+
+</head>
+<body>
+<script>
+    // 默认有个形参 event，通过该形参可以拿到按下键盘的键盘码
+    $(window).keydown(function (event) {
+        console.log(event.keyCode);
+        if(event.keyCode===16){
+            alert("你按了shift键")
+        }
+    });
+</script>
+</body>
+</html>
